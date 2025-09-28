@@ -32,8 +32,7 @@ git clone https://github.com/kdave/btrfs-progs.git
 cd btrfs-progs
 git checkout v6.16.1
 ./autogen.sh
-export EXTRA_PYTHON_LDFLAGS=${LDFLAGS}
-LDFLAGS="-static -no-pie -s -leconf" ./configure --prefix=/usr/local/btrfs-progsmm --disable-documentation --disable-backtrace --disable-shared
+ LDFLAGS="-static -no-pie -s -leconf -lintl" EXTRA_PYTHON_LDFLAGS=${LDFLAGS} ./configure --prefix=/usr/local/btrfs-progsmm --disable-documentation --disable-backtrace --disable-shared
 make btrfs.box
 
 tar vcJf ./btrfs.tar.xz btrfs.box
