@@ -7,6 +7,15 @@ WORKSPACE=/tmp/workspace
 mkdir -p $WORKSPACE
 mkdir -p /work/artifact
 
+# util-linux
+cd $WORKSPACE
+curl -sL https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.4.tar.xz | tar x --xz
+cd util-linux-2.40.4
+./autogen.sh && ./configure --prefix=/usr --enable-static --disable-shared  --disable-all-programs \
+  --enable-libmount --enable-libblkid --enable-libuuid
+make -j8
+make install
+
 # libeconf
 cd $WORKSPACE
 git clone https://github.com/openSUSE/libeconf.git
