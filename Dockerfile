@@ -13,7 +13,7 @@ RUN apk add --no-cache \
  git util-linux-dev util-linux-static py3-setuptools \
  lzo-dev autoconf automake e2fsprogs-static e2fsprogs-dev \
  zstd-static zstd-dev eudev-dev meson ninja \
- bash xz gettext gettext-dev autoconf automake libtool flex bison curl
+ bash xz gettext gettext-static gettext-dev autoconf automake libtool flex bison curl
 
 ENV XZ_OPT=-e9
 COPY build-static-btrfs-tools.sh build-static-btrfs-tools.sh
