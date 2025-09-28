@@ -12,7 +12,7 @@ RUN apk add --no-cache \
  zlib-dev zlib-static python3-dev openssl-dev openssl-libs-static \
  git util-linux-dev util-linux-static py3-setuptools \
  lzo-dev autoconf automake e2fsprogs-static e2fsprogs-dev \
- zstd-static zstd-dev eudev-dev meson ninja
+ zstd-static zstd-dev eudev-dev meson ninja \
  bash xz
 
 ENV XZ_OPT=-e9
